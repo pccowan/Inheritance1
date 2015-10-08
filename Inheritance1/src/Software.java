@@ -8,6 +8,16 @@ public class Software extends Product {
     	return "I am software";
     }
     
+    @Override
+    public boolean equals(Object obj)
+    {
+    	Software o = (Software) obj;
+    	if (o.code.equals(code) && o.description.equals(description) && o.price == price && o.programmer.equals(programmer) && o.platform.equals(platform) && o.os.equals(os))
+    		return true;
+    	else
+    		return false;
+    }
+    
 	public String getProgrammer() {
 		return programmer;
 	}

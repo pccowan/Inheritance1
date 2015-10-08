@@ -2,9 +2,9 @@ import java.text.NumberFormat;
 
 public class Product
 {
-    private String code;
-    private String description;
-    private double price;
+    protected String code;
+    protected String description;
+    protected double price;
     protected static int count = 0;   // a protected 
                                       // static variable
     public String whatAmI()
@@ -31,7 +31,8 @@ public class Product
                "Price:       " +
                this.getFormattedPrice() + "\n";
     }
-
+    
+    
     private String getFormattedPrice() {
     	NumberFormat currency = NumberFormat.getCurrencyInstance();
 		String priceString = currency.format(price);
@@ -40,6 +41,17 @@ public class Product
 		
 		
 	}
+    
+    public boolean equals(Object obj)
+    {
+    	Product o = (Product) obj;
+    	if (o.code.equals(code) && o.description.equals(description) && o.price == price)
+    		return true;
+    	else
+    		return false;
+    }
+    
+    
 	// create public access for the count variable
     public static int getCount()   
     {

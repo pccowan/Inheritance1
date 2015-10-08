@@ -8,6 +8,15 @@ public class Book extends Product {
     	return "I am a book";
     }
     
+    @Override
+    public boolean equals(Object obj)
+    {
+    	Book o = (Book) obj;
+    	if (o.code.equals(code) && o.description.equals(description) && o.price == price && o.author.equals(author) && o.pages == pages)
+    		return true;
+    	else
+    		return false;
+    }
     
     
 	public String getAuthor()
